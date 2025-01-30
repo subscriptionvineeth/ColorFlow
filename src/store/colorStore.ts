@@ -3,10 +3,15 @@ import tinycolor from 'tinycolor2';
 import { ColorScheme, ColorHistory, defaultColors, validateContrast } from '../types/colors';
 
 interface ColorStore {
-  colors: ColorScheme;
+  colors: {
+    text: string;
+    background: string;
+    primary: string;
+    secondary: string;
+    accent: string;
+  };
   history: ColorHistory;
-  setColor: (key: keyof ColorScheme, value: string) => void;
-  toggleDarkMode: () => void;
+  setColor: (key: keyof ColorStore['colors'], value: string) => void;
   randomizeColors: () => void;
   undo: () => void;
   redo: () => void;
@@ -19,23 +24,6 @@ export const useColorStore = create<ColorStore>((set) => ({
   setColor: (key, value) =>
     set((state) => {
       const newColors = { ...state.colors, [key]: value };
-      return {
-        colors: newColors,
-        history: {
-          past: [...state.history.past, state.colors],
-          future: [],
-        },
-      };
-    }),
-
-  toggleDarkMode: () =>
-    set((state) => {
-      const newColors = {
-        ...state.colors,
-        isDarkMode: !state.colors.isDarkMode,
-        text: state.colors.isDarkMode ? '#1a1a1a' : '#ffffff',
-        background: state.colors.isDarkMode ? '#ffffff' : '#1a1a1a',
-      };
       return {
         colors: newColors,
         history: {

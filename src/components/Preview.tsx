@@ -77,29 +77,28 @@ const Preview: React.FC = () => {
                  style={{ backgroundColor: `${colors.primary}15` }}>
               <div className="w-2 h-2 rounded-full" style={{ backgroundColor: colors.primary }}></div>
             </div>
-            <h2 className="text-2xl font-bold" style={{ color: colors.primary }}>How It Works</h2>
+            How It Works
           </div>
 
           <h2 className="text-4xl font-bold mb-16">
-            <span className="block text-gray-900">Here's How Together We</span>
+            <span className="block text-gray-900" style={{ color: colors.secondary }}>Here's How Together We</span>
             <span className="block text-blue-500" style={{ color: colors.primary }}>Make a Difference</span>
           </h2>
 
           <div className="space-y-8">
             {/* Step 1 */}
-            <div className="rounded-2xl p-8 flex gap-8 items-center relative overflow-hidden" style={{ backgroundColor: colors.primary }}>
+            <div className="rounded-2xl p-8 flex gap-8 items-center relative overflow-hidden" style={{ backgroundColor: `${colors.primary}10` }}>
               <div className="absolute inset-0" style={{
-                backgroundColor: `${colors.accent}10`,
                 backgroundImage: `url('assets/pattern.svg')`,
                 backgroundSize: '500px',
                 opacity: 0.02
               }}></div>
               <div className="flex-1 relative z-10">
-                <div className="text-sm mb-2" style={{ color: colors.text }}>01</div>
-                <h3 className="text-2xl font-bold mb-4" style={{ color: colors.text }}>
+                <div className="text-sm mb-2" style={{ color: colors.primary }}>01</div>
+                <h3 className="text-2xl font-bold mb-4" style={{ color: colors.primary }}>
                   Understanding the Challenges
                 </h3>
-                <p>
+                <p style={{ color: colors.text }}>
                   We begin by identifying the pressing social justice and human rights issues. Through research, dialogue, and engagement with stakeholders, we gain an understanding of the needs and priorities that guide our work.
                 </p>
               </div>
@@ -109,18 +108,18 @@ const Preview: React.FC = () => {
             </div>
 
             {/* Step 2 */}
-            <div className="rounded-2xl p-8 flex gap-8 items-center relative overflow-hidden" style={{ backgroundColor: colors.secondary }}>
+            <div className="rounded-2xl p-8 flex gap-8 items-center relative overflow-hidden" style={{ backgroundColor: `${colors.secondary}10` }}>
               <div className="absolute inset-0" style={{
                 backgroundImage: `url('assets/pattern.svg')`,
                 backgroundSize: '500px',
                 opacity: 0.02
               }}></div>
               <div className="flex-1 relative z-10">
-                <div className="text-sm" style={{ color: colors.text }}>02</div>
-                <h3 className="text-2xl font-bold mb-4" style={{ color: colors.text }}>
+                <div className="text-sm" style={{ color: colors.secondary }}>02</div>
+                <h3 className="text-2xl font-bold mb-4" style={{ color: colors.secondary }}>
                   Pioneering Solutions for Lasting Change
                 </h3>
-                <p>
+                <p style={{ color: colors.text }}>
                   With an understanding of the challenges at hand, we develop solutions and strategies to address them. Our team collaborates with experts and community members to design programs and campaigns that have the potential to drive changes.
                 </p>
               </div>
@@ -130,19 +129,18 @@ const Preview: React.FC = () => {
             </div>
 
             {/* Step 3 */}
-            <div className="rounded-2xl p-8 flex gap-8 items-center relative overflow-hidden" style={{ backgroundColor: colors.primary }}>
+            <div className="rounded-2xl p-8 flex gap-8 items-center relative overflow-hidden" style={{ backgroundColor: `${colors.accent}10` }}>
               <div className="absolute inset-0" style={{
-                backgroundColor: `${colors.secondary}10`,
                 backgroundImage: `url('assets/pattern.svg')`,
                 backgroundSize: '500px',
                 opacity: 0.02
               }}></div>
               <div className="flex-1 relative z-10">
-                <div className="text-sm mb-2" style={{ color: colors.text }}>03</div>
-                <h3 className="text-2xl font-bold mb-4" style={{ color: colors.text }}>
+                <div className="text-sm mb-2" style={{ color: colors.accent }}>03</div>
+                <h3 className="text-2xl font-bold mb-4" style={{ color: colors.accent }}>
                   Building Support and Changing Lives Together
                 </h3>
-                <p>
+                <p style={{ color: colors.text }}>
                   Mobilizing resources is crucial to bringing our vision to life. We engage with donors, supporters, and funding partners to secure the financial and material resources needed to implement our programs and initiatives effectively.
                 </p>
               </div>
@@ -152,19 +150,18 @@ const Preview: React.FC = () => {
             </div>
 
             {/* Step 4 */}
-            <div className="rounded-2xl p-8 flex gap-8 items-center relative overflow-hidden" style={{ backgroundColor: colors.secondary }}>
+            <div className="rounded-2xl p-8 flex gap-8 items-center relative overflow-hidden" style={{ backgroundColor: `${colors.primary}10` }}>
               <div className="absolute inset-0" style={{
-               backgroundColor: `${colors.secondary}10`,
-               backgroundImage: `url('assets/pattern.svg')`,
-               backgroundSize: '500px',
-               opacity: 0.02
+                backgroundImage: `url('assets/pattern.svg')`,
+                backgroundSize: '500px',
+                opacity: 0.02
               }}></div>
               <div className="flex-1 relative z-10">
-                <div className="text-sm mb-2" style={{ color: colors.text }}>04</div>
-                <h3 className="text-2xl font-bold mb-4 ">
+                <div className="text-sm mb-2" style={{ color: colors.primary }}>04</div>
+                <h3 className="text-2xl font-bold mb-4 " style={{ color: colors.secondary }}>
                   Taking Immediate Action on the Ground
                 </h3>
-                <p>
+                <p style={{ color: colors.text }}>
                   With resources in hand, we put our plans into action by implementing programs and initiatives that directly address the identified needs. Our team works tirelessly to make a positive impact on the ground.
                 </p>
               </div>
@@ -187,7 +184,7 @@ const Preview: React.FC = () => {
             <h2 className="text-2xl font-bold" style={{ color: colors.primary }}>Changing Lives            </h2>
           </div>
           <h2 className="text-4xl font-bold mb-12">
-            <span className="block" style={{ color: colors.text }}>Uniting Hearts,</span>
+            <span className="block" style={{ color: colors.secondary }}>Uniting Hearts,</span>
             <span className="block" style={{ color: colors.primary }}>Changing Lives</span>
           </h2>
           
@@ -327,20 +324,16 @@ const Preview: React.FC = () => {
           </div>
           <div className="grid md:grid-cols-4 gap-8">
             {[
-              { number: '10K+', label: 'Active Users', icon: '👥' },
-              { number: '50K+', label: 'Colors Generated', icon: '🎨' },
-              { number: '99%', label: 'Satisfaction Rate', icon: '⭐' },
-              { number: '24/7', label: 'Customer Support', icon: '💬' },
-            ].map(({ number, label, icon }, i) => (
-              <div key={i} className="bg-white rounded-2xl p-8 text-center shadow-lg transform hover:-translate-y-1 transition-transform relative overflow-hidden group">
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity"
-                     style={{ backgroundColor: colors.secondary }}></div>
+              { number: '10K+', label: 'Active Users', icon: <img src="/assets/active.svg" alt="Active users" className="w-20 h-20 mx-auto" /> },
+              { number: '50K+', label: 'Colors Generated', icon: <img src="/assets/color-palette.svg" alt="Color palette" className="w-20 h-20 mx-auto" /> },
+              { number: '99%', label: 'Satisfaction Rate', icon: <img src="/assets/score.svg" alt="Star rating" className="w-20 h-20 mx-auto" /> },
+              { number: '24/7', label: 'Customer Support', icon: <img src="/assets/online-chat.svg" alt="Customer support" className="w-20 h-20 mx-auto" /> },
+            ].map((stat, index) => (
+              <div key={index} className="text-center p-6 rounded-lg relative overflow-hidden" style={{ backgroundColor: `${colors.primary}10` }}>
                 <div className="relative z-10">
-                  <div className="text-4xl mb-4">{icon}</div>
-                  <div className="text-4xl font-bold mb-2" style={{ color: colors.secondary }}>
-                    {number}
-                  </div>
-                  <div className="text-gray-600">{label}</div>
+                  {stat.icon}
+                  <div className="text-3xl font-bold mt-4" style={{ color: colors.primary }}>{stat.number}</div>
+                  <div style={{ color: colors.text }}>{stat.label}</div>
                 </div>
               </div>
             ))}
@@ -508,7 +501,7 @@ const Preview: React.FC = () => {
       {/* CTA Section */}
       <section className="py-20 text-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-5"
-             style={{ backgroundColor: colors.accent }}></div>
+             style={{ backgroundColor: colors.secondary }}></div>
         <div className="relative">
           <h2 className="text-4xl font-bold mb-6" style={{ color: colors.primary }}>
             Ready to Transform Your Website?
