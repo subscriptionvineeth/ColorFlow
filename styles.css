@@ -1,0 +1,40 @@
+.uniting-hearts {
+    padding: 40px;
+    background-color: #ffffff; /* White background */
+    text-align: center;
+}
+
+.uniting-hearts h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #2c3e50; /* Darker text color */
+}
+
+.uniting-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.uniting-item {
+    background-color: #f0f4f8; /* Light background for items */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.uniting-item:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.uniting-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #34495e; /* Darker text color for headings */
+}
+
+.uniting-item p {
+    font-size: 1em;
+    color: #7f8c8d; /* Grey text color */
+} 
