@@ -179,6 +179,13 @@ const Preview: React.FC = () => {
       {/* Mission Section */}
       <section className="mission-section py-16">
         <div className="container mx-auto px-4">
+        <div className="flex items-center gap-2 mb-6 text-sm font-medium" style={{ color: colors.primary }}>
+            <div className="w-5 h-5 rounded-full flex items-center justify-center" 
+                 style={{ backgroundColor: `${colors.primary}15` }}>
+              <div className="w-2 h-2 rounded-full" style={{ backgroundColor: colors.primary }}></div>
+            </div>
+            <h2 className="text-2xl font-bold" style={{ color: colors.primary }}>Changing Lives            </h2>
+          </div>
           <h2 className="text-4xl font-bold mb-12">
             <span className="block" style={{ color: colors.text }}>Uniting Hearts,</span>
             <span className="block" style={{ color: colors.primary }}>Changing Lives</span>
