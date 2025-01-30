@@ -23,7 +23,7 @@ const Preview: React.FC = () => {
       }}
     >
       {/* Hero Section */}
-      <section className="py-24 relative overflow-hidden">
+      <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0" style={{
           backgroundColor: `${colors.primary}03`,
           backgroundImage: `repeating-linear-gradient(
@@ -77,7 +77,7 @@ const Preview: React.FC = () => {
                  style={{ backgroundColor: `${colors.primary}15` }}>
               <div className="w-2 h-2 rounded-full" style={{ backgroundColor: colors.primary }}></div>
             </div>
-            How It Works
+            <h2 className="text-2xl font-bold" style={{ color: colors.primary }}>How It Works</h2>
           </div>
 
           <h2 className="text-4xl font-bold mb-16">
@@ -95,8 +95,8 @@ const Preview: React.FC = () => {
                 opacity: 0.02
               }}></div>
               <div className="flex-1 relative z-10">
-                <div className="text-sm mb-2">01</div>
-                <h3 className="text-xl font-semibold mb-4">
+                <div className="text-sm mb-2" style={{ color: colors.text }}>01</div>
+                <h3 className="text-2xl font-bold mb-4" style={{ color: colors.text }}>
                   Understanding the Challenges
                 </h3>
                 <p>
@@ -116,8 +116,8 @@ const Preview: React.FC = () => {
                 opacity: 0.02
               }}></div>
               <div className="flex-1 relative z-10">
-                <div className="text-sm">02</div>
-                <h3 className="text-xl font-semibold mb-4">
+                <div className="text-sm" style={{ color: colors.text }}>02</div>
+                <h3 className="text-2xl font-bold mb-4" style={{ color: colors.text }}>
                   Pioneering Solutions for Lasting Change
                 </h3>
                 <p>
@@ -138,8 +138,8 @@ const Preview: React.FC = () => {
                 opacity: 0.02
               }}></div>
               <div className="flex-1 relative z-10">
-                <div className="text-sm mb-2">03</div>
-                <h3 className="text-xl font-semibold mb-4">
+                <div className="text-sm mb-2" style={{ color: colors.text }}>03</div>
+                <h3 className="text-2xl font-bold mb-4" style={{ color: colors.text }}>
                   Building Support and Changing Lives Together
                 </h3>
                 <p>
@@ -160,8 +160,8 @@ const Preview: React.FC = () => {
                opacity: 0.02
               }}></div>
               <div className="flex-1 relative z-10">
-                <div className="text-sm mb-2">04</div>
-                <h3 className="text-xl font-semibold mb-4 ">
+                <div className="text-sm mb-2" style={{ color: colors.text }}>04</div>
+                <h3 className="text-2xl font-bold mb-4 ">
                   Taking Immediate Action on the Ground
                 </h3>
                 <p>
@@ -198,7 +198,7 @@ const Preview: React.FC = () => {
                 )`
               }}></div>
               <div className="relative z-10">
-                <h3 className="text-xl font-semibold mb-4" style={{ color: colors.primary }}>Driving Change, Transforming Lives</h3>
+                <h3 className="text-2xl font-bold mb-4" style={{ color: colors.primary }}>Driving Change, Transforming Lives</h3>
                 <p style={{ color: colors.text }}>Our mission is simple: to champion social justice and human rights for all. We are dedicated to creating a world where every individual is treated with dignity, fairness, and respect.</p>
               </div>
             </div>
@@ -219,7 +219,7 @@ const Preview: React.FC = () => {
                 )`
               }}></div>
               <div className="relative z-10">
-                <h3 className="text-xl font-semibold mb-4" style={{ color: colors.secondary }}>A World of Equity and Opportunity</h3>
+                <h3 className="text-2xl font-bold mb-4" style={{ color: colors.secondary }}>A World of Equity and Opportunity</h3>
                 <p style={{ color: colors.text }}>Our vision is to build a future where equity and opportunity are not just ideals, but realities for every person, regardless of race, gender, ethnicity, or socioeconomic status.</p>
               </div>
             </div>
@@ -241,7 +241,7 @@ const Preview: React.FC = () => {
                 )`
               }}></div>
               <div className="relative z-10">
-                <h3 className="text-xl font-semibold mb-4" style={{ color: colors.accent }}>Guided by Integrity and Compassion</h3>
+                <h3 className="text-2xl font-bold mb-4" style={{ color: colors.accent }}>Guided by Integrity and Compassion</h3>
                 <p style={{ color: colors.text }}>At the heart of our organization are our core values of integrity, compassion, and social responsibility. We believe in upholding the highest ethical standards in all that we do.</p>
               </div>
             </div>
@@ -263,7 +263,7 @@ const Preview: React.FC = () => {
                 )`
               }}></div>
               <div className="relative z-10">
-                <h3 className="text-xl font-semibold mb-4" style={{ color: colors.primary }}>Making a Difference, One Step at a Time</h3>
+                <h3 className="text-2xl font-bold mb-4" style={{ color: colors.primary }}>Making a Difference, One Step at a Time</h3>
                 <p style={{ color: colors.text }}>We have been dedicated to making a tangible impact in the lives of individuals and communities worldwide. Our work spans a wide range of initiatives aimed at addressing systemic injustices and promoting equality.</p>
               </div>
             </div>
@@ -284,7 +284,7 @@ const Preview: React.FC = () => {
                 )`
               }}></div>
               <div className="relative z-10">
-                <h3 className="text-xl font-semibold mb-4" style={{ color: colors.secondary }}>Dedicated Minds Behind Our Mission</h3>
+                <h3 className="text-2xl font-bold mb-4" style={{ color: colors.secondary }}>Dedicated Minds Behind Our Mission</h3>
                 <p style={{ color: colors.text }}>Our team is comprised of passionate individuals from diverse backgrounds, united by a shared commitment to our mission. Together, we collaborate tirelessly to drive forward our mission and make a meaningful difference in the world.</p>
               </div>
             </div>
@@ -311,7 +311,7 @@ const Preview: React.FC = () => {
                    style={{ backgroundColor: `${colors.secondary}15` }}>
                 <div className="w-2 h-2 rounded-full" style={{ backgroundColor: colors.secondary }}></div>
               </div>
-              <span className="text-sm font-medium" style={{ color: colors.secondary }}>Our Impact</span>
+              <h2 className="text-2xl font-bold" style={{ color: colors.secondary }}>Our Impact</h2>
             </div>
             <h2 className="text-4xl font-bold mb-4">Growing Together</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
@@ -360,7 +360,7 @@ const Preview: React.FC = () => {
                    style={{ backgroundColor: `${colors.accent}15` }}>
                 <div className="w-2 h-2 rounded-full" style={{ backgroundColor: colors.accent }}></div>
               </div>
-              <span className="text-sm font-medium" style={{ color: colors.accent }}>Pricing Plans</span>
+              <h2 className="text-2xl font-bold" style={{ color: colors.accent }}>Pricing Plans</h2>
             </div>
             <h2 className="text-4xl font-bold mb-4">Choose Your Plan</h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto">
@@ -440,7 +440,7 @@ const Preview: React.FC = () => {
                    style={{ backgroundColor: `${colors.primary}15` }}>
                 <div className="w-2 h-2 rounded-full" style={{ backgroundColor: colors.primary }}></div>
               </div>
-              <span className="text-sm font-medium" style={{ color: colors.primary }}>Testimonials</span>
+              <h2 className="text-2xl font-bold" style={{ color: colors.primary }}>Testimonials</h2>
             </div>
             <h2 className="text-4xl font-bold mb-4">What Our Users Say</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">

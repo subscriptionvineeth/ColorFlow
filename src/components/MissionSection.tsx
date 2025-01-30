@@ -35,8 +35,8 @@ export const MissionSection: React.FC<MissionSectionProps> = ({ colors }) => {
   return (
     <section className="py-16">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-12">
-          <span className="block" style={{ color: colors.text }}>Uniting Hearts,</span>
+        <h2 className="text-6xl font-bold mb-12">
+          <span className="block" style={{ color: colors.text }}>Uniting Hearts</span>
           <span className="block" style={{ color: colors.primary }}>Changing Lives</span>
         </h2>
         

@@ -11,13 +11,10 @@ const Navbar: React.FC = () => {
       className="sticky top-0 z-40 backdrop-blur-lg bg-opacity-80"
       style={{ backgroundColor: colors.background }}
     >
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <div className="flex items-center gap-2">
-            <Palette size={24} style={{ color: colors.primary }} />
-            <span className="text-xl font-bold" style={{ color: colors.primary }}>
-            ColorFlow
-            </span>
+          <div className="flex items-center"> 
+             <img src="/assets/color-flow.png" alt="color-flow" className="object-contain w-60" />
           </div>
 
           {/* Desktop Menu */}
