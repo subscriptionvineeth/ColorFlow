@@ -302,7 +302,7 @@ const Preview: React.FC = () => {
               }}></div>
               <div className="relative z-10">
                 <h3 className="text-2xl font-bold mb-4" style={{ color: colors.secondary }}>Unlocking a World of Color Exploration and Trends </h3>
-                <p style={{ color: colors.text }}>Stay ahead of design trends with ColorFlow’s dynamic color insights. Discover trending color schemes, explore seasonal palettes, and experiment with fresh combinations to keep your projects modern, engaging, and visually stunning.</p>
+                <p style={{ color: colors.text }}>Stay ahead of design trends with ColorFlow’s dynamic color insights. Discover trending color schemes, explore seasonal palettes, and experiment with fresh combinations to keep your projects modern, engaging, and visually stunning.g</p>
               </div>
             </div>
           </div>

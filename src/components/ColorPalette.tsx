@@ -104,7 +104,7 @@ module.exports = {
         </div>
       )}
 
-      <div className="fixed bottom-0 left-0 right-0 bg-grey/90 shadow-2xl z-50 backdrop-blur-lg">
+      <div className="fixed bottom-0 left-0 right-0 z-50 bg-gray-100 border-t border-gray-200 shadow-lg">
         <div className="container mx-auto px-4 py-4 md:py-6">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-8">
             {/* Color Controls */}
