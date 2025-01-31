@@ -33,14 +33,27 @@ const Preview: React.FC = () => {
             transparent 10px,
             transparent 50px
           )`
-        }}></div>
+        }}>
+          {/* Decorative shapes */}
+          <div className="absolute top-20 right-20 w-48 h-48 rounded-full animate-pulse" 
+               style={{ backgroundColor: `${colors.accent}30` }}></div>
+          <div className="absolute top-40 right-80 w-40 h-40 rotate-45 animate-bounce" 
+               style={{ backgroundColor: `${colors.secondary}30` }}></div>
+          <div className="absolute top-60 right-40 w-32 h-32 rounded-lg animate-pulse" 
+               style={{ backgroundColor: `${colors.primary}30` }}></div>
+          <div className="absolute top-80 right-96 w-36 h-36 rounded-full animate-bounce" 
+               style={{ backgroundColor: `${colors.accent}20` }}></div>
+          <div className="absolute top-96 right-60 w-44 h-44 rounded-3xl rotate-12 animate-pulse" 
+               style={{ backgroundColor: `${colors.secondary}25` }}></div>
+        </div>
         <div className="container mx-auto px-4 relative">
-          <div className="flex items-center gap-2 mb-6">
-            <div className="w-5 h-5 rounded-full flex items-center justify-center" 
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-8 h-8 rounded-full flex items-center justify-center hover:scale-110 transition-transform cursor-pointer" 
                  style={{ backgroundColor: `${colors.primary}15` }}>
-              <div className="w-2 h-2 rounded-full" style={{ backgroundColor: colors.primary }}></div>
+              <div className="w-4 h-4 rounded-full" style={{ backgroundColor: colors.primary }}></div>
             </div>
-            <span className="text-sm font-medium" style={{ color: colors.primary }}>Welcome to ColorFlow</span>
+            <span className="text-2xl font-medium hover:opacity-80 transition-opacity" 
+                  style={{ color: colors.primary }}>Welcome to ColorFlow</span>
           </div>
           <div className="max-w-3xl">
             <h1 className="text-6xl font-bold mb-6">
@@ -96,10 +109,10 @@ const Preview: React.FC = () => {
               <div className="flex-1 relative z-10">
                 <div className="text-sm mb-2" style={{ color: colors.primary }}>01</div>
                 <h3 className="text-2xl font-bold mb-4" style={{ color: colors.primary }}>
-                  Understanding the Challenges
+                Select a Base Color That Reflects Your Vision
                 </h3>
                 <p style={{ color: colors.text }}>
-                  We begin by identifying the pressing social justice and human rights issues. Through research, dialogue, and engagement with stakeholders, we gain an understanding of the needs and priorities that guide our work.
+                Begin by choosing a primary color that resonates with your project’s theme, brand identity, or aesthetic preferences. Whether you’re designing a website, a digital product, or a marketing campaign, selecting the right base color is the first step toward a cohesive look.
                 </p>
               </div>
               <div className="w-48 h-48 flex-shrink-0 relative z-10">
@@ -117,10 +130,10 @@ const Preview: React.FC = () => {
               <div className="flex-1 relative z-10">
                 <div className="text-sm" style={{ color: colors.secondary }}>02</div>
                 <h3 className="text-2xl font-bold mb-4" style={{ color: colors.secondary }}>
-                  Pioneering Solutions for Lasting Change
+                Explore Professionally Curated Color Palettes
                 </h3>
                 <p style={{ color: colors.text }}>
-                  With an understanding of the challenges at hand, we develop solutions and strategies to address them. Our team collaborates with experts and community members to design programs and campaigns that have the potential to drive changes.
+                Once you select a base color, ColorFlow automatically generates a range of complementary and harmonious color combinations based on proven color theory principles. These palettes are designed to ensure visual appeal, balance, and aesthetic consistency across various design elements.
                 </p>
               </div>
               <div className="w-48 h-48 flex-shrink-0 relative z-10">
@@ -138,10 +151,10 @@ const Preview: React.FC = () => {
               <div className="flex-1 relative z-10">
                 <div className="text-sm mb-2" style={{ color: colors.accent }}>03</div>
                 <h3 className="text-2xl font-bold mb-4" style={{ color: colors.accent }}>
-                  Building Support and Changing Lives Together
+                Customize, Adjust, and Perfect Your Colors
                 </h3>
                 <p style={{ color: colors.text }}>
-                  Mobilizing resources is crucial to bringing our vision to life. We engage with donors, supporters, and funding partners to secure the financial and material resources needed to implement our programs and initiatives effectively.
+                Have specific preferences? Fine-tune individual colors within the suggested palettes to better align with your creative needs. Adjust hues, saturation, brightness, and contrast to achieve the perfect balance between boldness and subtlety.
                 </p>
               </div>
               <div className="w-48 h-48 flex-shrink-0 relative z-10">
@@ -159,10 +172,10 @@ const Preview: React.FC = () => {
               <div className="flex-1 relative z-10">
                 <div className="text-sm mb-2" style={{ color: colors.primary }}>04</div>
                 <h3 className="text-2xl font-bold mb-4 " style={{ color: colors.secondary }}>
-                  Taking Immediate Action on the Ground
+                Save, Export, and Integrate Effortlessly
                 </h3>
                 <p style={{ color: colors.text }}>
-                  With resources in hand, we put our plans into action by implementing programs and initiatives that directly address the identified needs. Our team works tirelessly to make a positive impact on the ground.
+                Once you’re satisfied with your custom color scheme, save your selections and export them in your preferred format. Whether you need HEX, RGB, or other formats, ColorFlow ensures seamless integration into your workflow, making it easier than ever to implement your color choices into your projects.
                 </p>
               </div>
               <div className="w-48 h-48 flex-shrink-0 relative z-10">
@@ -181,11 +194,11 @@ const Preview: React.FC = () => {
                  style={{ backgroundColor: `${colors.primary}15` }}>
               <div className="w-2 h-2 rounded-full" style={{ backgroundColor: colors.primary }}></div>
             </div>
-            <h2 className="text-2xl font-bold" style={{ color: colors.primary }}>Changing Lives            </h2>
+            <h2 className="text-2xl font-bold" style={{ color: colors.primary }}>Changing Lives             </h2>
           </div>
           <h2 className="text-4xl font-bold mb-12">
-            <span className="block" style={{ color: colors.secondary }}>Uniting Hearts,</span>
-            <span className="block" style={{ color: colors.primary }}>Changing Lives</span>
+            <span className="block" style={{ color: colors.secondary }}>Through Seamless</span>
+            <span className="block" style={{ color: colors.primary }}>Color Inspiration</span>
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -202,8 +215,8 @@ const Preview: React.FC = () => {
                 )`
               }}></div>
               <div className="relative z-10">
-                <h3 className="text-2xl font-bold mb-4" style={{ color: colors.primary }}>Driving Change, Transforming Lives</h3>
-                <p style={{ color: colors.text }}>Our mission is simple: to champion social justice and human rights for all. We are dedicated to creating a world where every individual is treated with dignity, fairness, and respect.</p>
+                <h3 className="text-2xl font-bold mb-4" style={{ color: colors.primary }}>Empowering Creativity for Professionals and Beginners Alike</h3>
+                <p style={{ color: colors.text }}> Whether you’re a seasoned designer or someone just starting out, ColorFlow takes the guesswork out of choosing the right colors. With an extensive library of predefined palettes and customization options, it encourages exploration, innovation, and creative freedom.</p>
               </div>
             </div>
 
@@ -223,8 +236,8 @@ const Preview: React.FC = () => {
                 )`
               }}></div>
               <div className="relative z-10">
-                <h3 className="text-2xl font-bold mb-4" style={{ color: colors.secondary }}>A World of Equity and Opportunity</h3>
-                <p style={{ color: colors.text }}>Our vision is to build a future where equity and opportunity are not just ideals, but realities for every person, regardless of race, gender, ethnicity, or socioeconomic status.</p>
+                <h3 className="text-2xl font-bold mb-4" style={{ color: colors.secondary }}>Increasing Productivity and Reducing Design Fatigue</h3>
+                <p style={{ color: colors.text }}>Choosing the right colors can be a daunting task, but ColorFlow eliminates unnecessary back-and-forth by providing instant, professionally designed palettes. This allows users to focus more on their creative vision and spend less time struggling with color coordination.</p>
               </div>
             </div>
 
@@ -245,8 +258,8 @@ const Preview: React.FC = () => {
                 )`
               }}></div>
               <div className="relative z-10">
-                <h3 className="text-2xl font-bold mb-4" style={{ color: colors.accent }}>Guided by Integrity and Compassion</h3>
-                <p style={{ color: colors.text }}>At the heart of our organization are our core values of integrity, compassion, and social responsibility. We believe in upholding the highest ethical standards in all that we do.</p>
+                <h3 className="text-2xl font-bold mb-4" style={{ color: colors.accent }}>Enhancing Accessibility and Inclusive Design</h3>
+                <p style={{ color: colors.text }}>Good design should be visually appealing to everyone. ColorFlow includes accessibility-focused features, ensuring that color combinations maintain sufficient contrast and clarity. This helps designers create inclusive digital experiences that cater to a diverse audience.</p>
               </div>
             </div>
 
@@ -267,8 +280,8 @@ const Preview: React.FC = () => {
                 )`
               }}></div>
               <div className="relative z-10">
-                <h3 className="text-2xl font-bold mb-4" style={{ color: colors.primary }}>Making a Difference, One Step at a Time</h3>
-                <p style={{ color: colors.text }}>We have been dedicated to making a tangible impact in the lives of individuals and communities worldwide. Our work spans a wide range of initiatives aimed at addressing systemic injustices and promoting equality.</p>
+                <h3 className="text-2xl font-bold mb-4" style={{ color: colors.primary }}>Enabling Seamless Brand and Product Consistency</h3>
+                <p style={{ color: colors.text }}> For businesses and branding professionals, maintaining a consistent color identity is crucial. ColorFlow allows users to build custom palettes aligned with their brand aesthetics, ensuring uniformity across marketing materials, websites, and digital products.</p>
               </div>
             </div>
 
@@ -288,8 +301,8 @@ const Preview: React.FC = () => {
                 )`
               }}></div>
               <div className="relative z-10">
-                <h3 className="text-2xl font-bold mb-4" style={{ color: colors.secondary }}>Dedicated Minds Behind Our Mission</h3>
-                <p style={{ color: colors.text }}>Our team is comprised of passionate individuals from diverse backgrounds, united by a shared commitment to our mission. Together, we collaborate tirelessly to drive forward our mission and make a meaningful difference in the world.</p>
+                <h3 className="text-2xl font-bold mb-4" style={{ color: colors.secondary }}>Unlocking a World of Color Exploration and Trends </h3>
+                <p style={{ color: colors.text }}>Stay ahead of design trends with ColorFlow’s dynamic color insights. Discover trending color schemes, explore seasonal palettes, and experiment with fresh combinations to keep your projects modern, engaging, and visually stunning.</p>
               </div>
             </div>
           </div>

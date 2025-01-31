@@ -21,10 +21,9 @@ const Footer: React.FC = () => {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <Palette size={24} style={{ color: colors.primary }} />
-              <span className="text-xl font-bold" style={{ color: colors.primary }}>
-                ColorCraft
-              </span>
+            <div className="flex items-center"> 
+             <img src="/assets/color-flow.png" alt="color-flow" className="object-contain w-60" />
+          </div>
             </div>
             <p className="opacity-80 mb-4">
               Create stunning color schemes for your website with our intuitive color
@@ -92,15 +91,15 @@ const Footer: React.FC = () => {
             <ul className="space-y-4">
               <li className="flex items-center gap-2">
                 <Mail size={20} style={{ color: colors.primary }} />
-                <span>support@colorcraft.com</span>
+                <span>support@color-flow.app</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone size={20} style={{ color: colors.primary }} />
-                <span>+1 (555) 123-4567</span>
+                <span>+91 (123) 123-4567</span>
               </li>
               <li className="flex items-center gap-2">
                 <MapPin size={20} style={{ color: colors.primary }} />
-                <span>123 Color Street, Design City, DC 12345</span>
+                <span>#80 Color Street, Bangalore 12345</span>
               </li>
             </ul>
           </div>
