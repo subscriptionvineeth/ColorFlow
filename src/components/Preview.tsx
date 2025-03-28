@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useColorStore } from '../store/colorStore';
-import { ChevronDown, Check, Star, ArrowRight, Heart, Users, Zap, Shield, Globe } from 'lucide-react';
+import { ChevronDown, Check, Star, ArrowRight, Heart, Users, Zap, Shield, Globe, Plus, Minus } from 'lucide-react';
 
 const Preview: React.FC = () => {
   const { colors } = useColorStore();
+  const [activeFaq, setActiveFaq] = useState<number | null>(0);
+
+  const toggleFaq = (index: number) => {
+    setActiveFaq(activeFaq === index ? null : index);
+  };
 
   const style = {
     '--text-color': colors.text,
@@ -15,7 +20,7 @@ const Preview: React.FC = () => {
 
   return (
     <div 
-      className="min-h-screen pb-32"
+      className="min-h-screen pb-32 pt-28"
       style={{
         ...style,
         color: colors.text,
@@ -23,67 +28,163 @@ const Preview: React.FC = () => {
       }}
     >
       {/* Hero Section */}
-      <section className="py-20 relative overflow-hidden">
+      <section className="py-28 relative overflow-hidden">
         <div className="absolute inset-0" style={{
           backgroundColor: `${colors.primary}03`,
-          backgroundImage: `repeating-linear-gradient(
-            45deg,
-            ${colors.primary}01,
-            ${colors.primary}01 10px,
-            transparent 10px,
-            transparent 50px
-          )`
+          backgroundImage: `
+            radial-gradient(circle at 20% 35%, ${colors.primary}05 0%, transparent 50%),
+            radial-gradient(circle at 75% 44%, ${colors.secondary}08 0%, transparent 65%),
+            repeating-linear-gradient(
+              45deg,
+              ${colors.primary}01,
+              ${colors.primary}01 10px,
+              transparent 10px,
+              transparent 50px
+            )
+          `
         }}>
           {/* Decorative shapes */}
-          <div className="absolute top-20 right-20 w-48 h-48 rounded-full animate-pulse" 
-               style={{ backgroundColor: `${colors.accent}30` }}></div>
-          <div className="absolute top-40 right-80 w-40 h-40 rotate-45 animate-bounce" 
-               style={{ backgroundColor: `${colors.secondary}30` }}></div>
-          <div className="absolute top-60 right-40 w-32 h-32 rounded-lg animate-pulse" 
-               style={{ backgroundColor: `${colors.primary}30` }}></div>
-          <div className="absolute top-80 right-96 w-36 h-36 rounded-full animate-bounce" 
-               style={{ backgroundColor: `${colors.accent}20` }}></div>
-          <div className="absolute top-96 right-60 w-44 h-44 rounded-3xl rotate-12 animate-pulse" 
-               style={{ backgroundColor: `${colors.secondary}25` }}></div>
+          <div className="absolute top-[10%] right-[20%] w-64 h-64 rounded-full animate-pulse opacity-60" 
+               style={{ 
+                 backgroundColor: `${colors.accent}30`,
+                 filter: 'blur(80px)'
+               }}></div>
+          <div className="absolute top-[40%] right-[30%] w-52 h-52 rotate-45 animate-pulse opacity-50" 
+               style={{ 
+                 backgroundColor: `${colors.secondary}30`,
+                 filter: 'blur(60px)'
+               }}></div>
+          <div className="absolute top-[60%] right-[15%] w-48 h-48 rounded-full animate-pulse opacity-70" 
+               style={{ 
+                 backgroundColor: `${colors.primary}30`,
+                 filter: 'blur(70px)'
+               }}></div>
+          <div className="absolute top-1/4 left-1/4 w-20 h-20 rounded-full animate-pulse opacity-30"
+               style={{ background: `linear-gradient(135deg, ${colors.primary}70, ${colors.secondary}70)` }}></div>
+          <div className="absolute bottom-1/3 left-1/5 w-16 h-16 rounded-full animate-pulse opacity-20"
+               style={{ background: `linear-gradient(135deg, ${colors.secondary}70, ${colors.accent}70)` }}></div>
         </div>
-        <div className="container mx-auto px-4 relative">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-8 h-8 rounded-full flex items-center justify-center hover:scale-110 transition-transform cursor-pointer" 
-                 style={{ backgroundColor: `${colors.primary}15` }}>
-              <div className="w-4 h-4 rounded-full" style={{ backgroundColor: colors.primary }}></div>
+        <div className="container mx-auto px-6 relative">
+          <div className="flex flex-col md:flex-row items-center gap-16">
+            <div className="flex-1 max-w-2xl order-2 md:order-1">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8 backdrop-blur-sm animate-fade-in"
+                   style={{ backgroundColor: `${colors.primary}10`, color: colors.primary }}>
+                <div className="w-2 h-2 rounded-full" style={{ backgroundColor: colors.primary }}></div>
+                <span className="text-sm font-medium">Premium Color Management Solution</span>
+              </div>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight animate-slide-in">
+                <span className="block" style={{ color: colors.text }}>Transform Your <br/>Digital Experience</span>
+              </h1>
+              <p className="text-xl text-gray-600 mb-8 leading-relaxed animate-slide-in opacity-90" style={{ animationDelay: '0.1s' }}>
+                Create stunning color schemes for your projects with our intuitive color palette generator.
+                Perfect for designers, developers, and creative professionals.
+              </p>
+              <div className="flex flex-wrap gap-4 animate-slide-in" style={{ animationDelay: '0.2s' }}>
+                <button className="px-8 py-4 rounded-xl text-white font-medium transition-all duration-300 hover:shadow-xl shadow-md transform hover:-translate-y-1"
+                        style={{ 
+                          background: `linear-gradient(135deg, ${colors.primary}, ${colors.secondary})`,
+                          boxShadow: `0 10px 20px -10px ${colors.primary}80`
+                        }}>
+                  Get Started
+                </button>
+                <button className="px-8 py-4 rounded-xl font-medium transition-all duration-300 hover:shadow-lg border transform hover:-translate-y-1"
+                        style={{ 
+                          color: colors.primary,
+                          borderColor: `${colors.primary}30`,
+                          backgroundColor: colors.background
+                        }}>
+                  <span className="flex items-center gap-2">
+                    Learn More <ArrowRight size={16} />
+                  </span>
+                </button>
+              </div>
+              <div className="mt-12 flex items-center gap-4 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+                <div className="flex -space-x-3">
+                  {[colors.primary, colors.secondary, colors.accent].map((color, i) => (
+                    <div key={i} className="w-10 h-10 rounded-full border-2 flex items-center justify-center"
+                         style={{ backgroundColor: color, borderColor: colors.background, zIndex: 3-i }}>
+                      <span className="text-white text-xs">
+                        {i === 0 ? '+' : ''}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+                <div>
+                  <div className="text-sm font-medium" style={{ color: colors.primary }}>Trusted by 10,000+ designers</div>
+                  <div className="flex items-center gap-1 text-xs">
+                    <Star size={14} fill={colors.primary} color={colors.primary} />
+                    <Star size={14} fill={colors.primary} color={colors.primary} />
+                    <Star size={14} fill={colors.primary} color={colors.primary} />
+                    <Star size={14} fill={colors.primary} color={colors.primary} />
+                    <Star size={14} fill={colors.primary} color={colors.primary} />
+                    <span className="ml-1 opacity-75">4.9/5 ratings</span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <span className="text-2xl font-medium hover:opacity-80 transition-opacity" 
-                  style={{ color: colors.primary }}>Welcome to ColorFlow</span>
-          </div>
-          <div className="max-w-3xl">
-            <h1 className="text-6xl font-bold mb-6">
-              <span className="block" style={{ color: colors.text }}>Transform Your</span>
-              <span className="block" style={{ color: colors.primary }}>Digital Experience</span>
-            </h1>
-            <p className="text-xl text-gray-600 mb-8">
-              Create stunning color schemes for your projects with our intuitive color palette generator.
-              Perfect for designers, developers, and creatives.
-            </p>
-            <div className="flex gap-4">
-              <button className="px-8 py-3 rounded-lg text-white font-medium transition-opacity hover:opacity-90"
-                      style={{ backgroundColor: colors.primary }}>
-                Get Started
-              </button>
-              <button className="px-8 py-3 rounded-lg font-medium transition-colors border"
-                      style={{ 
-                        borderColor: colors.primary,
-                        color: colors.primary,
-                        backgroundColor: 'white'
-                      }}>
-                Learn More
-              </button>
+            <div className="flex-1 relative animate-scale-in w-full max-w-md md:ml-auto order-1 md:order-2">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary opacity-10 rounded-3xl blur-xl"></div>
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl border"
+                   style={{ borderColor: `${colors.primary}10` }}>
+                <div className="h-12 flex items-center px-4 border-b" 
+                     style={{ 
+                       backgroundColor: colors.background,
+                       borderColor: `${colors.text}10`
+                     }}>
+                  <div className="flex space-x-2">
+                    <div className="w-3 h-3 rounded-full" style={{ backgroundColor: '#FF5F57' }}></div>
+                    <div className="w-3 h-3 rounded-full" style={{ backgroundColor: '#FFBD2E' }}></div>
+                    <div className="w-3 h-3 rounded-full" style={{ backgroundColor: '#28C840' }}></div>
+                  </div>
+                </div>
+                <div style={{ backgroundColor: colors.background }}>
+                  <div className="p-6">
+                    <div className="h-12 rounded-lg mb-4 flex items-center px-4"
+                         style={{ backgroundColor: `${colors.text}05` }}>
+                      <span className="text-sm opacity-70">Choose your colors...</span>
+                    </div>
+                    <div className="grid grid-cols-2 gap-3 mb-4">
+                      {['primary', 'secondary', 'accent', 'background'].map((colorType) => (
+                        <div key={colorType} className="rounded-lg p-3 h-16 flex flex-col justify-between"
+                             style={{ backgroundColor: `${colors.text}05` }}>
+                          <div className="text-xs opacity-70 capitalize">{colorType}</div>
+                          <div className="flex items-center gap-2">
+                            <div className="w-6 h-6 rounded-full" 
+                                 style={{ backgroundColor: colors[colorType as keyof typeof colors] as string }}></div>
+                            <span className="text-xs font-mono">
+                              {typeof colors[colorType as keyof typeof colors] === 'string' 
+                                ? colors[colorType as keyof typeof colors] 
+                                : ''}
+                            </span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="rounded-lg h-40 p-4 flex items-center justify-center relative overflow-hidden"
+                         style={{ backgroundColor: `${colors.text}05` }}>
+                      <div className="absolute inset-0 flex items-center justify-center opacity-10">
+                        <div className="w-64 h-64 rounded-full" 
+                             style={{ backgroundColor: colors.primary }}></div>
+                      </div>
+                      <div className="z-10 text-center">
+                        <div className="font-medium mb-2">Preview</div>
+                        <div className="flex gap-2 justify-center">
+                          <div className="w-20 h-8 rounded-md" style={{ backgroundColor: colors.primary }}></div>
+                          <div className="w-20 h-8 rounded-md" style={{ backgroundColor: colors.secondary }}></div>
+                          <div className="w-20 h-8 rounded-md" style={{ backgroundColor: colors.accent }}></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* How It Works Section */}
-      <section className="py-16 relative">
+      <section id="how-it-works" className="py-16 relative">
         <div className="container mx-auto px-4">
           <div className="flex items-center gap-2 mb-6 text-sm font-medium" style={{ color: colors.primary }}>
             <div className="w-5 h-5 rounded-full flex items-center justify-center" 
@@ -112,7 +213,7 @@ const Preview: React.FC = () => {
                 Select a Base Color That Reflects Your Vision
                 </h3>
                 <p style={{ color: colors.text }}>
-                Begin by choosing a primary color that resonates with your project’s theme, brand identity, or aesthetic preferences. Whether you’re designing a website, a digital product, or a marketing campaign, selecting the right base color is the first step toward a cohesive look.
+                Begin by choosing a primary color that resonates with your project's theme, brand identity, or aesthetic preferences. Whether you're designing a website, a digital product, or a marketing campaign, selecting the right base color is the first step toward a cohesive look.
                 </p>
               </div>
               <div className="w-48 h-48 flex-shrink-0 relative z-10">
@@ -175,7 +276,7 @@ const Preview: React.FC = () => {
                 Save, Export, and Integrate Effortlessly
                 </h3>
                 <p style={{ color: colors.text }}>
-                Once you’re satisfied with your custom color scheme, save your selections and export them in your preferred format. Whether you need HEX, RGB, or other formats, ColorFlow ensures seamless integration into your workflow, making it easier than ever to implement your color choices into your projects.
+                Once you're satisfied with your custom color scheme, save your selections and export them in your preferred format. Whether you need HEX, RGB, or other formats, ColorFlow ensures seamless integration into your workflow, making it easier than ever to implement your color choices into your projects.
                 </p>
               </div>
               <div className="w-48 h-48 flex-shrink-0 relative z-10">
@@ -216,7 +317,7 @@ const Preview: React.FC = () => {
               }}></div>
               <div className="relative z-10">
                 <h3 className="text-2xl font-bold mb-4" style={{ color: colors.primary }}>Empowering Creativity for Professionals and Beginners Alike</h3>
-                <p style={{ color: colors.text }}> Whether you’re a seasoned designer or someone just starting out, ColorFlow takes the guesswork out of choosing the right colors. With an extensive library of predefined palettes and customization options, it encourages exploration, innovation, and creative freedom.</p>
+                <p style={{ color: colors.text }}> Whether you're a seasoned designer or someone just starting out, ColorFlow takes the guesswork out of choosing the right colors. With an extensive library of predefined palettes and customization options, it encourages exploration, innovation, and creative freedom.</p>
               </div>
             </div>
 
@@ -302,7 +403,7 @@ const Preview: React.FC = () => {
               }}></div>
               <div className="relative z-10">
                 <h3 className="text-2xl font-bold mb-4" style={{ color: colors.secondary }}>Unlocking a World of Color Exploration and Trends </h3>
-                <p style={{ color: colors.text }}>Stay ahead of design trends with ColorFlow’s dynamic color insights. Discover trending color schemes, explore seasonal palettes, and experiment with fresh combinations to keep your projects modern, engaging, and visually stunning.g</p>
+                <p style={{ color: colors.text }}>Stay ahead of design trends with ColorFlow's dynamic color insights. Discover trending color schemes, explore seasonal palettes, and experiment with fresh combinations to keep your projects modern, engaging, and visually stunning.g</p>
               </div>
             </div>
           </div>
@@ -312,7 +413,7 @@ const Preview: React.FC = () => {
       {/* Statistics Section */}
       <section className="py-16 relative overflow-hidden">
         <div className="absolute inset-0" style={{
-          backgroundColor: `${colors.secondary}03`,
+          backgroundColor: colors.isDarkMode ? `${colors.background}70` : `${colors.secondary}03`,
           backgroundImage: `repeating-linear-gradient(
             45deg,
             ${colors.secondary}01,
@@ -342,7 +443,7 @@ const Preview: React.FC = () => {
               { number: '99%', label: 'Satisfaction Rate', icon: <img src="/assets/score.svg" alt="Star rating" className="w-20 h-20 mx-auto" /> },
               { number: '24/7', label: 'Customer Support', icon: <img src="/assets/online-chat.svg" alt="Customer support" className="w-20 h-20 mx-auto" /> },
             ].map((stat, index) => (
-              <div key={index} className="text-center p-6 rounded-lg relative overflow-hidden" style={{ backgroundColor: `${colors.primary}10` }}>
+              <div key={index} className={`text-center p-6 rounded-lg relative overflow-hidden ${colors.isDarkMode ? 'bg-gray-800/60' : 'bg-white/80'}`}>
                 <div className="relative z-10">
                   {stat.icon}
                   <div className="text-3xl font-bold mt-4" style={{ color: colors.primary }}>{stat.number}</div>
@@ -355,9 +456,9 @@ const Preview: React.FC = () => {
       </section>
 
       {/* Pricing Table */}
-      <section className="py-16 relative overflow-hidden">
+      <section id="pricing" className="py-16 relative overflow-hidden">
         <div className="absolute inset-0" style={{
-          backgroundColor: `${colors.accent}03`,
+          backgroundColor: colors.isDarkMode ? `${colors.background}70` : `${colors.accent}03`,
           backgroundImage: `repeating-linear-gradient(
             45deg,
             ${colors.accent}01,
@@ -375,8 +476,8 @@ const Preview: React.FC = () => {
               </div>
               <h2 className="text-2xl font-bold" style={{ color: colors.accent }}>Pricing Plans</h2>
             </div>
-            <h2 className="text-4xl font-bold mb-4">Choose Your Plan</h2>
-            <p className="text-xl mb-8 max-w-2xl mx-auto">
+            <h2 className="text-4xl font-bold mb-4" style={{ color: colors.text }}>Choose Your Plan</h2>
+            <p className="text-xl mb-8 max-w-2xl mx-auto" style={{ color: colors.text }}>
               Select the perfect plan that matches your needs and start creating beautiful color schemes today
             </p>
           </div>
@@ -403,21 +504,24 @@ const Preview: React.FC = () => {
               },
             ].map((plan, i) => (
               <div key={i} 
-                   className="bg-white rounded-2xl p-8 shadow-lg transform hover:-translate-y-1 transition-transform relative overflow-hidden group">
+                   className={`rounded-2xl p-8 shadow-lg transform hover:-translate-y-1 transition-transform relative overflow-hidden group ${colors.isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity"
                      style={{ backgroundColor: colors.accent }}></div>
+                <div className="absolute top-0 left-0 right-0 h-24 opacity-90 z-0"
+                     style={{ background: `linear-gradient(135deg, ${colors.primary}30, ${colors.primary}05)` }}></div>
                 <div className="relative z-10">
-                  <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                  <p className="text-gray-600 mb-6">{plan.description}</p>
+                  <h3 className="text-2xl font-bold mb-2 py-4" style={{ color: colors.text }}>{plan.name}</h3>
+                  <p className={`mb-6 ${colors.isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>{plan.description}</p>
+                    
                   <div className="mb-6">
                     <span className="text-4xl font-bold" style={{ color: colors.primary }}>${plan.price}</span>
-                    <span className="text-gray-600">/month</span>
+                    <span className={`${colors.isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>/month</span>
                   </div>
                   <ul className="space-y-4 mb-8">
                     {plan.features.map((feature, i) => (
                       <li key={i} className="flex items-center gap-2">
                         <Check size={16} style={{ color: colors.secondary }} />
-                        <span>{feature}</span>
+                        <span style={{ color: colors.text }}>{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -435,9 +539,9 @@ const Preview: React.FC = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 relative">
+      <section id="testimonials" className="py-16 relative">
         <div className="absolute inset-0" style={{
-          backgroundColor: `${colors.accent}03`,
+          backgroundColor: colors.isDarkMode ? `${colors.background}70` : `${colors.accent}03`,
           backgroundImage: `repeating-linear-gradient(
             45deg,
             ${colors.accent}01,
@@ -455,8 +559,8 @@ const Preview: React.FC = () => {
               </div>
               <h2 className="text-2xl font-bold" style={{ color: colors.primary }}>Testimonials</h2>
             </div>
-            <h2 className="text-4xl font-bold mb-4">What Our Users Say</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-4xl font-bold mb-4" style={{ color: colors.text }}>What Our Users Say</h2>
+            <p className={`max-w-2xl mx-auto ${colors.isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
               Join thousands of satisfied users who have transformed their projects with our color tools
             </p>
           </div>
@@ -485,9 +589,11 @@ const Preview: React.FC = () => {
                 rating: 5
               }
             ].map((testimonial, i) => (
-              <div key={i} className="bg-white rounded-2xl p-8 shadow-lg transform hover:-translate-y-1 transition-transform relative overflow-hidden group">
+              <div key={i} className={`rounded-2xl p-8 shadow-lg transform hover:-translate-y-1 transition-transform relative overflow-hidden group ${colors.isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity"
                      style={{ backgroundColor: colors.accent }}></div>
+                <div className="absolute top-0 left-0 right-0 h-24 opacity-90 z-0" 
+                     style={{ background: `linear-gradient(135deg, ${colors.primary}30, ${colors.secondary}05)` }}></div>
                 <div className="relative z-10">
                   <div className="flex items-center gap-4 mb-6">
                     <div className="w-16 h-16 rounded-full overflow-hidden bg-gray-100">
@@ -495,7 +601,7 @@ const Preview: React.FC = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold text-lg" style={{ color: colors.primary }}>{testimonial.name}</h3>
-                      <p className="text-sm text-gray-600">{testimonial.role}</p>
+                      <p className={`text-sm ${colors.isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>{testimonial.role}</p>
                     </div>
                   </div>
                   <div className="mb-4">
@@ -503,7 +609,116 @@ const Preview: React.FC = () => {
                       <span key={i} className="text-yellow-400">★</span>
                     ))}
                   </div>
-                  <blockquote className="text-gray-700 italic">"{testimonial.quote}"</blockquote>
+                  <blockquote className={`italic ${colors.isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>"{testimonial.quote}"</blockquote>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section id="faq" className="py-16 relative overflow-hidden">
+        <div className="absolute inset-0" style={{
+          backgroundColor: colors.isDarkMode ? `${colors.background}70` : `${colors.primary}03`,
+          backgroundImage: `repeating-linear-gradient(
+            45deg,
+            ${colors.primary}01,
+            ${colors.primary}01 10px,
+            transparent 10px,
+            transparent 50px
+          )`
+        }}></div>
+        <div className="max-w-7xl mx-auto px-4 relative">
+          <div className="text-center mb-16">
+            <div className="flex items-center gap-2 justify-center mb-4">
+              <div className="w-5 h-5 rounded-full flex items-center justify-center" 
+                   style={{ backgroundColor: `${colors.primary}15` }}>
+                <div className="w-2 h-2 rounded-full" style={{ backgroundColor: colors.primary }}></div>
+              </div>
+              <h2 className="text-2xl font-bold" style={{ color: colors.primary }}>FAQ</h2>
+            </div>
+            <h2 className="text-4xl font-bold mb-4" style={{ color: colors.text }}>Frequently Asked Questions</h2>
+            <p className={`max-w-2xl mx-auto ${colors.isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+              Get answers to common questions about ColorFlow
+            </p>
+          </div>
+
+          <div className="max-w-3xl mx-auto">
+            {[
+              {
+                question: "How does ColorFlow generate color palettes?",
+                answer: "ColorFlow uses advanced color theory algorithms to generate harmonious color combinations. You can choose from several harmony types like complementary, split-complementary, analogous, triadic, and more."
+              },
+              {
+                question: "Can I export my color palettes?",
+                answer: "Yes! ColorFlow allows you to export your color palettes in various formats including CSS variables, Tailwind CSS config, hex codes, and more."
+              },
+              {
+                question: "Is ColorFlow suitable for beginners?",
+                answer: "Absolutely! ColorFlow is designed to be user-friendly for both beginners and professionals. The intuitive interface makes it easy to create beautiful color schemes without extensive design knowledge."
+              },
+              {
+                question: "How do I ensure my colors are accessible?",
+                answer: "ColorFlow includes built-in accessibility features that check your color combinations for proper contrast ratios, ensuring your designs meet WCAG guidelines."
+              },
+              {
+                question: "Can I save my color combinations?",
+                answer: "Yes, with a ColorFlow account you can save unlimited color palettes to your personal library for future reference and sharing."
+              },
+              {
+                question: "Is there a mobile version available?",
+                answer: "ColorFlow is fully responsive and works on all devices including smartphones and tablets, giving you the freedom to create color palettes anywhere."
+              }
+            ].map((faq, i) => (
+              <div 
+                key={i}
+                className={`${colors.isDarkMode ? 'bg-gray-800/40' : 'bg-white/80'} backdrop-blur-sm rounded-xl mb-4 overflow-hidden transition-all duration-300 ${activeFaq === i ? 'shadow-xl shadow-primary/10' : 'shadow'}`}
+                style={{ borderBottom: `1px solid ${colors.primary}20` }}
+              >
+                <div 
+                  className="px-6 py-5 flex justify-between items-center cursor-pointer"
+                  onClick={() => toggleFaq(i)}
+                  style={{ 
+                    background: activeFaq === i ? `linear-gradient(90deg, ${colors.primary}10, transparent)` : 'transparent',
+                  }}
+                >
+                  <h3 
+                    className="text-xl font-semibold flex-1" 
+                    style={{ color: activeFaq === i ? colors.primary : colors.text }}
+                  >
+                    {faq.question}
+                  </h3>
+                  <div 
+                    className={`h-10 w-10 rounded-full flex items-center justify-center transition-all duration-300 ${activeFaq === i ? 'rotate-180 bg-primary/20' : 'bg-gray-100/20'}`}
+                    style={{ 
+                      color: activeFaq === i ? colors.primary : colors.text,
+                      transform: activeFaq === i ? 'rotate(180deg)' : 'rotate(0deg)'
+                    }}
+                  >
+                    {activeFaq === i ? 
+                      <Minus size={18} style={{ color: colors.primary }} /> : 
+                      <Plus size={18} style={{ color: colors.primary }} />
+                    }
+                  </div>
+                </div>
+                <div 
+                  className="overflow-hidden transition-all duration-500 ease-in-out"
+                  style={{ 
+                    maxHeight: activeFaq === i ? '300px' : '0',
+                    opacity: activeFaq === i ? 1 : 0,
+                    paddingLeft: '24px',
+                    paddingRight: '24px',
+                    paddingBottom: activeFaq === i ? '24px' : '0',
+                    borderLeft: `4px solid ${activeFaq === i ? colors.primary : 'transparent'}`
+                  }}
+                >
+                  <div 
+                    className={`prose text-base leading-relaxed ${activeFaq === i ? 'animate-fadeIn' : 'animate-fadeOut'}`}
+                    style={{ color: colors.text }}
+                  >
+                    {faq.answer}
+                  </div>
                 </div>
               </div>
             ))}

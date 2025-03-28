@@ -6,7 +6,7 @@ export interface ColorScheme {
   primary: string;
   secondary: string;
   accent: string;
-  isDarkMode: boolean;
+  isDarkMode?: boolean;
 }
 
 export interface ColorHistory {
